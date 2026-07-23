@@ -1,0 +1,24 @@
+[general]
+name=STAT GEOM QC
+qgisMinimumVersion=3.16
+qgisMaximumVersion=3.99
+description=Contrôle qualité et statistiques géométriques des couches vectorielles, avec score de correctness et rapport.
+about=STAT GEOM QC analyse les couches vectorielles QGIS et détecte les problèmes de qualité : géométries nulles ou vides, invalides, auto-intersections, chevauchements/intersections entre polygones, doublons, petits polygones (seuil m² configurable) et incohérences bâtiments (AGL > AMSL). Il calcule un score de correctness (0-100) pondéré, affiche une synthèse moderne (jauge, indicateurs, décomposition) et produit un rapport exportable (HTML/CSV/JSON). Actions QGIS intégrées : sélection des entités fautives, création d'une couche d'erreurs et réparation géométrique sélective (cases à cocher) qui écrit le résultat dans un NOUVEAU fichier sans modifier la couche d'origine. Portage natif PyQGIS de l'application STAT GEOM (aucune dépendance externe).
+version=2.7.0
+author=Adel Bchini
+email=adel.bchini@gmail.com
+tags=quality,quality control,qc,geometry,validation,topology,statistics,vector,correctness,buildings,duplicates,overlaps,intersection
+category=Vector
+icon=icon.svg
+experimental=False
+deprecated=False
+homepage=https://github.com/Bchini/stat-geom-qc
+tracker=https://github.com/Bchini/stat-geom-qc/issues
+repository=https://github.com/Bchini/stat-geom-qc
+changelog=2.7.0 - Le contrôle bâtiments (AGL vs AMSL) est désormais DÉSACTIVÉ par défaut (à activer manuellement au besoin).
+    2.6.0 - Métadonnées de publication : liens homepage / repository / tracker renseignés (dépôt GitHub public) pour l'upload sur plugins.qgis.org.
+    2.5.0 - Auto-correction PRUDENTE des chevauchements : seuls les recouvrements mineurs (surface rognée ≤ seuil %, réglable) sont corrigés en rognant le plus petit polygone ; le plus grand garde sa forme. Les cas importants sont laissés à l'opérateur, avec la liste des FID à revoir.
+    2.4.0 - Projet personnel : retrait de toute référence à un tiers (nom et email de contact mis à jour). Durcissement sécurité (hachage BLAKE2b pour les doublons, nettoyage des imports inutilisés).
+    2.3.0 - L'auto-intersection devient une catégorie de problème à part entière : entités traçées (FID), sélectionnables, exportables dans la couche d'erreurs et réparables via une case à cocher dédiée (make valid). Détection d'invalidité renforcée (balayage de toutes les erreurs de validation).
+    2.2.0 - Réparation géométrique sélective par cases à cocher (invalides / nulles-vides / doublons / petits polygones) écrite dans un NOUVEAU fichier sans modifier l'original. Le score ne peut plus valoir 100/100 s'il subsiste des anomalies. Auteur mis à jour (Adel Bchini).
+    2.1.0 - Détection des chevauchements, doublons, petits polygones, contrôle bâtiments AGL/AMSL, score de correctness et rapports HTML/CSV/JSON.
