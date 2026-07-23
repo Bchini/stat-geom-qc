@@ -4,7 +4,7 @@ qgisMinimumVersion=3.16
 qgisMaximumVersion=3.99
 description=Quality control and geometric statistics for vector layers, with a correctness score and exportable report.
 about=STAT GEOM QC analyses QGIS vector layers and detects quality issues: null or empty geometries, invalid geometries, self-intersections, overlaps/intersections between polygons, duplicates, small polygons (configurable m² threshold) and building inconsistencies (AGL > AMSL). It computes a weighted correctness score (0-100), shows a modern summary (gauge, indicators, breakdown) and produces an exportable report (HTML/CSV/JSON). Built-in QGIS actions: select flagged features, create an error layer, and selective geometry repair (checkboxes) that writes the result to a NEW file without modifying the source layer. Native PyQGIS port of the STAT GEOM application, with no external dependencies.
-version=2.8.1
+version=2.8.2
 author=Adel Bchini
 email=adel.bchini@gmail.com
 tags=quality,quality control,qc,geometry,validation,topology,statistics,vector,correctness,buildings,duplicates,overlaps,intersection
@@ -15,7 +15,8 @@ deprecated=False
 homepage=https://github.com/Bchini/stat-geom-qc
 tracker=https://github.com/Bchini/stat-geom-qc/issues
 repository=https://github.com/Bchini/stat-geom-qc
-changelog=2.8.1 - Fix metadata.txt parsing error on plugins.qgis.org caused by a reserved percent sign in the changelog; rephrased to remove it.
+changelog=2.8.2 - Add the required LICENSE file (GNU GPL v2) inside the plugin package.
+    2.8.1 - Fix metadata.txt parsing error on plugins.qgis.org caused by a reserved percent sign in the changelog; rephrased to remove it.
     2.8.0 - Metadata description and about translated to English for the QGIS plugin repository.
     2.7.0 - Le contrôle bâtiments (AGL vs AMSL) est désormais DÉSACTIVÉ par défaut (à activer manuellement au besoin).
     2.6.0 - Métadonnées de publication : liens homepage / repository / tracker renseignés (dépôt GitHub public) pour l'upload sur plugins.qgis.org.
