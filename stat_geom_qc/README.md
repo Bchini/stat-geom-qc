@@ -71,4 +71,4 @@ d'entités concernées, pondérée par gravité :
 Grades : Excellent ≥ 95 · Bon ≥ 85 · Correct ≥ 70 · Faible ≥ 50 · Critique < 50.
 
 ---
-*Adel Bchini — v2.8.2*
+*Adel Bchini — v2.8.3*

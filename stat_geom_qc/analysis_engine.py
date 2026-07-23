@@ -837,7 +837,7 @@ class GeomAnalyzer:
             areas[f.id()] = g.area()
             try:
                 index.addFeature(f)
-            except Exception:
+            except Exception:  # nosec B110 - indexation spatiale best-effort, entité ignorée
                 pass
 
         for fid, g in geoms.items():
@@ -864,7 +864,7 @@ class GeomAnalyzer:
                 try:
                     if not g.intersects(og):
                         continue
-                except Exception:
+                except Exception:  # nosec B112 - test d'intersection best-effort, paire ignorée
                     continue
                 dom_union = QgsGeometry(og) if dom_union is None else dom_union.combine(og)
 
